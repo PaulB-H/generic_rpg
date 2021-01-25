@@ -28,6 +28,15 @@
         background-size: 400%;
         animation: left-to-right 0.7s steps(3) infinite;
       }
+      .adventurer-combat-idle {
+        height: 60px;
+        width: 100px;
+        background-image: url("./adventurer_combat_idle_sheet.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 400%;
+        animation: left-to-right 0.7s steps(3) infinite;
+      }
       @keyframes left-to-right {
         from {
           background-position: left;
@@ -42,8 +51,13 @@
     <div id="content">
       <p>Idle Spritesheet</p>
       <img src="./adventurer_idle_sheet.png" />
-      <p>Idle animation</p>
+      <p>Idle Animation</p>
       <div class="adventurer-idle"></div>
+
+      <p>Idle Combat Spritesheet</p>
+      <img src="./adventurer_combat_idle_sheet.png" />
+      <p>Idle Combat Animation</p>
+      <div class="adventurer-combat-idle"></div>
     </div>
   </body>
 </html>
