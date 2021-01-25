@@ -10,9 +10,40 @@
         padding: 0;
         box-sizing: border-box;
       }
+      #content {
+        margin: 5px;
+      }
+      p {
+        margin: 3px 0;
+      }
+      img {
+        max-width: 100%;
+      }
+      .adventurer-idle {
+        height: 60px;
+        width: 100px;
+        background-image: url("./adventurer_idle_sheet.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 400%;
+        animation: left-to-right 0.7s steps(3) infinite;
+      }
+      @keyframes left-to-right {
+        from {
+          background-position: left;
+        }
+        to {
+          background-position: right;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="adventurer-idle is_animating"></div>
+    <div id="content">
+      <p>Idle Spritesheet</p>
+      <img src="./adventurer_idle_sheet.png" />
+      <p>Idle animation</p>
+      <div class="adventurer-idle"></div>
+    </div>
   </body>
 </html>
