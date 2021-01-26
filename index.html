@@ -55,6 +55,16 @@
         background-size: 700%;
         animation: attack1 1s steps(6) infinite;
       }
+      .adventurer-combat-defend {
+        margin-top: 12px;
+        height: 60px;
+        width: 100px;
+        background-image: url("./adventurer_combat_defend_sheet.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 600%;
+        animation: left-to-right 0.7s steps(5) infinite;
+      }
       @keyframes left-to-right {
         from {
           background-position: left;
@@ -98,6 +108,7 @@
       <button onclick="idle()">Idle</button>
       <button onclick="idleCombat()">Idle Combat</button>
       <button onclick="attack1()">Attack 1</button>
+      <button onclick="defend()">Defend</button>
     </div>
     <script>
       "use strict";
@@ -116,6 +127,22 @@
         player.className = "";
         player.classList.add("adventurer-combat-idle");
         currentStatus = "adventurer-combat-idle";
+      }
+      function defend() {
+        player.className = "";
+        player.classList.add("adventurer-combat-defend");
+        btnArr.forEach((element) => {
+          element.disabled = true;
+        });
+
+        setTimeout(function () {
+          player.className = "";
+          player.classList.add(currentStatus);
+
+          btnArr.forEach((element) => {
+            element.disabled = false;
+          });
+        }, 700);
       }
       function attack1() {
         player.className = "";
