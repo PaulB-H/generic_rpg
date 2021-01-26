@@ -52,9 +52,17 @@
         background-position: left;
         background-repeat: no-repeat;
         background-size: 700%;
-        animation: left-to-right 1s steps(6) infinite;
+        animation: attack1 1s steps(6) infinite;
       }
       @keyframes left-to-right {
+        from {
+          background-position: left;
+        }
+        to {
+          background-position: right;
+        }
+      }
+      @keyframes attack1 {
         from {
           background-position: left;
         }
@@ -108,13 +116,15 @@
       function attack1() {
         player.className = "";
         player.classList.add("adventurer-combat-attack1");
+
         btnArr.forEach((element) => {
           element.disabled = true;
         });
-        console.log(buttons);
+
         setTimeout(function () {
           player.className = "";
           player.classList.add(currentStatus);
+
           btnArr.forEach((element) => {
             element.disabled = false;
           });
