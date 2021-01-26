@@ -79,5 +79,14 @@
       <button onclick="attack1()">Attack 1</button>
       <div id="myAdventurer" class="adventurer-idle"></div>
     </div>
+    <script>
+      "use strict";
+      const player = document.getElementById("myAdventurer");
+
+      function idle() {
+        player.className = "";
+        player.classList.add("adventurer-idle");
+      }
+    </script>
   </body>
 </html>
