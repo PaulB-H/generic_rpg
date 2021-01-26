@@ -82,14 +82,25 @@
     <script>
       "use strict";
       const player = document.getElementById("myAdventurer");
+      let currentStatus = "adventurer-idle";
 
       function idle() {
         player.className = "";
         player.classList.add("adventurer-idle");
+        currentStatus = "adventurer-idle";
       }
       function idleCombat() {
         player.className = "";
         player.classList.add("adventurer-combat-idle");
+        currentStatus = "adventurer-combat-idle";
+      }
+      function attack1() {
+        player.className = "";
+        player.classList.add("adventurer-combat-attack1");
+        setTimeout(function () {
+          player.className = "";
+          player.classList.add(currentStatus);
+        }, 1000);
       }
     </script>
   </body>
